@@ -1,7 +1,7 @@
 var Queue = function(){
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
-  var instance = Object.create(Queue.prototype);
+  var instance = Object.create(queueMethods);
   // instance.total = 0;
 
   instance.startQ = 0;
@@ -12,16 +12,16 @@ var Queue = function(){
 
 // var queueMethods = Object.create(Queue.prototype);
 var queueMethods = {};
-Queue.prototype.size = function(){
+queueMethods.size = function(){
   return this.endQ - this.startQ;
 };
 
-Queue.prototype.enqueue = function(value){
+queueMethods.enqueue = function(value){
   this[this.endQ] = value;
   this.endQ++;
 };
 
-Queue.prototype.dequeue = function(){
+queueMethods.dequeue = function(){
   if (this.endQ - this.startQ > 0){
     var temp = this[this.startQ];
     delete this[this.startQ];
