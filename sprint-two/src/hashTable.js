@@ -40,7 +40,7 @@ HashTable.prototype.remove = function(k){
   for (var j = 0; j < this._storage[i].length; j++){
     this._storage[i][j][1] = null;
   }
-  console.log('key length',Object.keys(this._storage));
+  // console.log('key length',Object.keys(this._storage));
   if (this.getStorageLength() < this._limit/2 + 3){
     this._limit /= 2;
   }
