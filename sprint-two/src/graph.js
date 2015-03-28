@@ -30,9 +30,9 @@ Graph.prototype.hasEdge = function(fromNode, toNode){
 Graph.prototype.addEdge = function(fromNode, toNode){
   this.storage[fromNode].link = toNode;
 
-  console.log('this,storage',this.storage);
-  console.log('fromNode',this.storage[fromNode]);
-  console.log('toNode',this.storage[toNode]);
+  // console.log('this,storage',this.storage);
+  // console.log('fromNode',this.storage[fromNode]);
+  // console.log('toNode',this.storage[toNode]);
 };
 
 Graph.prototype.removeEdge = function(fromNode, toNode){
