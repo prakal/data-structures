@@ -27,7 +27,7 @@ Methods.insert = function(value){
     contains the object that we are at.
     Initialize its value as the tree */
   var remainingTree = this;
-  console.dir(remainingTree);
+  // console.dir(remainingTree);
 
 // Loop while 'assigned' is false and
 while (!assigned) {
@@ -64,17 +64,40 @@ while (!assigned) {
   }
 }
 
-  // var position = this.instance.topValue;
-  // while (position.left && position.right) {
-  //   if (value > position.value){
-  //     postion = position.right;
-  //   }
-  // }
-  // if (value < this.tree)
-  // inner recursive function
+
 };
 Methods.contains = function(value){
-
+  // initiate a result variable to check if value exists in tree
+  var result = false;
+  // create an inner function to be used recursively
+  var recursiveFunction = function (object){
+    // check if value equals value in object
+    if (value === object.value){
+    // if check is true
+      // then set result to true
+      result = true;
+      // stop recursion with an empty return
+      return
+    }
+    // if check is not true
+    else{
+      // check if left is not null
+      if (object.left !== null){
+        // then invoke inner function (recursion) with left parameter
+        recursiveFunction(object.left);
+      }
+      // check if right is not null
+      if (object.right !== null){
+        // then invoke inner function (recursion) with right parameter
+        recursiveFunction(object.right);
+      }
+    }
+    // the inner function base case is implicit
+  };
+  // call recursive function with initial parameter as 'this'.
+  recursiveFunction(this);
+  // return the result variable
+  return result;
 };
 Methods.depthFirstLog = function(){
 
