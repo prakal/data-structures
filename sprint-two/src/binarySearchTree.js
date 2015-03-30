@@ -99,8 +99,21 @@ Methods.contains = function(value){
   // return the result variable
   return result;
 };
-Methods.depthFirstLog = function(){
+Methods.depthFirstLog = function(callback){
+  // run depthFirstLog over every value in the tree
 
+  // recursive function
+  var recursiveFunction = function(object){
+    // console.log(object);
+    callback(object.value);
+    if (object.left !== null){
+      recursiveFunction(object.left);
+    }
+    if (object.right !== null){
+      recursiveFunction(object.right);
+    }
+  };
+  recursiveFunction(this);
 };
 
 /*
